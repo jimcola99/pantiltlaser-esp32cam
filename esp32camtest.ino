@@ -1,4 +1,14 @@
+/*********
+  Rui Santos
+  Complete instructions at https://RandomNerdTutorials.com/esp32-cam-projects-ebook/
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files.
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*********/
 
+/**
+  jimcola99 added code to turn on the onboard led light and provide power to a laser for 5 seconds,  also change the servo initiliaziation position
+*********/  
 #include "esp_camera.h"
 #include <WiFi.h>
 #include "esp_timer.h"
