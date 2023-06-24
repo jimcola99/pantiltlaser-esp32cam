@@ -22,7 +22,7 @@
 
 // Replace with your network credentials
 const char* ssid = "yourwifinetwork";
-const char* password = "yourwifinetworkpassword";
+const char* password = "yourwifinetworkpasswordhere";
 
 #define PART_BOUNDARY "123456789000000000000987654321"
 
@@ -198,7 +198,6 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
       <tr><td align="center"><button class="button" onmousedown="toggleCheckbox('left');" ontouchstart="toggleCheckbox('left');">Left</button></td><td align="center"></td><td align="center"><button class="button" onmousedown="toggleCheckbox('right');" ontouchstart="toggleCheckbox('right');">Right</button></td></tr>
       <tr><td colspan="3" align="center"><button class="button" onmousedown="toggleCheckbox('down');" ontouchstart="toggleCheckbox('down');">Down</button></td></tr>
       <tr><td colspan="3" align="center"><button class="button" onmousedown="toggleCheckbox('light');" ontouchstart="toggleCheckbox('light');">Target</button></td></tr>                   
-
     </table>
    <script>
    function toggleCheckbox(x) {
@@ -315,34 +314,26 @@ static esp_err_t cmd_handler(httpd_req_t *req){
   int res = 0;
   
   if(!strcmp(variable, "up")) {
-    if(servo1Pos <= 170) {
-      servo1Pos += 10;
-      servo1.write(servo1Pos);
-    }
+    servo1Pos += 10;
+    servo1.write(servo1Pos);
     Serial.println(servo1Pos);
     Serial.println("Up");
   }
   else if(!strcmp(variable, "left")) {
-    if(servo2Pos <= 170) {
-      servo2Pos += 10;
-      servo2.write(servo2Pos);
-    }
+    servo2Pos += 10;
+    servo2.write(servo2Pos);
     Serial.println(servo2Pos);
     Serial.println("Left");
   }
   else if(!strcmp(variable, "right")) {
-    if(servo2Pos >= 10) {
-      servo2Pos -= 10;
-      servo2.write(servo2Pos);
-    }
+    servo2Pos -= 10;
+    servo2.write(servo2Pos);
     Serial.println(servo2Pos);
     Serial.println("Right");
   }
   else if(!strcmp(variable, "down")) {
-    if(servo1Pos >= 10) {
-      servo1Pos -= 10;
-      servo1.write(servo1Pos);
-    }
+    servo1Pos -= 10;
+    servo1.write(servo1Pos);
     Serial.println(servo1Pos);
     Serial.println("Down");
   }
